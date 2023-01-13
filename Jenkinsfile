@@ -7,10 +7,10 @@ node("linux"){
     }
     stage("Run playbook"){
         if (prod_run){
-            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
         }
         else{
-            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+            sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
         }
         
     }
